@@ -1,5 +1,6 @@
 ### JWT
 <p align="center"><img src="https://jwt.io/img/pic_logo.svg"></p>
+
 #### What is JWT?
 
     JWT is abbreviated as JSON Web Token. 
