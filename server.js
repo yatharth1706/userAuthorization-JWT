@@ -49,7 +49,7 @@ app.get('/posts', (req,res) => {
 })
 
 
-app.post('/users/login' , async (req,res) => {
+app.post('/login' , async (req,res) => {
     // Authenticate User
     const user = users.find(user => user.name = req.body.name)
     if(user == null){
