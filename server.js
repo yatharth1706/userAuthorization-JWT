@@ -48,8 +48,8 @@ app.post('/users', async (req,res) => {
     
 })
 
-app.get('/posts', (req,res) => {
-    res.json(posts);
+app.get('/posts', authenticateToken, (req,res) => {
+    res.json(posts.filter((post) => post.name === req.user.name ));
 })
 
 
@@ -86,6 +86,27 @@ app.post('/login' , async (req,res) => {
 
 })
 
+function authenticateToken(req,res,next){
+    // get the headers and replace the token 
+    const authHeaders = req.headers['authorization'];
+    const token = authHeaders && authHeaders.split(' ')[1];
+
+    if(token == null){
+        return res.sendStatus(401);
+    }
+
+
+    // if everything went successfull verify the token and show the posts
+
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET,(err, user) => {
+        if(err){
+            return res.sendStatus(403);
+        }
+
+        req.user = user;
+        next();
+    })
+}
 
 
 app.listen(3000, () => {
