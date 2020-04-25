@@ -1,6 +1,10 @@
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 app.use(express.json())
 
@@ -59,13 +63,25 @@ app.post('/login' , async (req,res) => {
     // now compare the password which is sent in request with your database
     try{
         if(await bcrypt.compare(req.body.password, user.password)){
-            res.send("Success");
+            const username  = req.body.name
+            const user = {
+                name : username
+            }
+            
+            const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+            console.log(accessToken);
+            // res.send("Success")
+            
+            res.json({
+                accessToken : accessToken
+            })
         }else{
             res.send("Not Allowed");
         }
     }catch{
         res.status(500).send("Password not matching!!")
     }
+
 
 
 })
