@@ -4,12 +4,7 @@ const bcrypt = require('bcrypt');
 
 app.use(express.json())
 
-const users = [
-    {
-        name: 'Kyle',
-        password: 'kyle'
-    }
-]
+const users = []
 
 const posts = [
     {
@@ -54,7 +49,7 @@ app.get('/posts', (req,res) => {
 })
 
 
-app.post('/login' , async (req,res) => {
+app.post('/users/login' , async (req,res) => {
     // Authenticate User
     const user = users.find(user => user.name = req.body.name)
     if(user == null){
@@ -63,7 +58,11 @@ app.post('/login' , async (req,res) => {
 
     // now compare the password which is sent in request with your database
     try{
-        bcrypt.compare(req.body.password, user.password);
+        if(await bcrypt.compare(req.body.password, user.password)){
+            res.send("Success");
+        }else{
+            res.send("Not Allowed");
+        }
     }catch{
         res.status(500).send("Password not matching!!")
     }
