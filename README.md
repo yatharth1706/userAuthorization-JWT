@@ -1,4 +1,6 @@
-### JWT
+[![Build Status](https://travis-ci.com/yatharth1706/UserAuthorization-JWT.svg?branch=master)](https://travis-ci.com/yatharth1706/UserAuthorization-JWT)
+
+### JWT 
 <p align="center"><img src="https://jwt.io/img/pic_logo.svg"></p>
 
 #### What is JWT?
