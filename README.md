@@ -1,7 +1,8 @@
-[![Build Status](https://travis-ci.com/yatharth1706/UserAuthorization-JWT.svg?branch=master)](https://travis-ci.com/yatharth1706/UserAuthorization-JWT)
+## JWT 
 
-### JWT 
-<p align="center"><img src="https://jwt.io/img/pic_logo.svg"></p>
+[![Build Status](https://travis-ci.com/yatharth1706/UserAuthorization-JWT.svg?branch=master)](https://travis-ci.com/yatharth1706/UserAuthorization-JWT) [![GitHub license](https://img.shields.io/github/license/yatharth1706/UserAuthorization-JWT)](https://github.com/yatharth1706/UserAuthorization-JWT/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/yatharth1706/UserAuthorization-JWT)](https://github.com/yatharth1706/UserAuthorization-JWT/issues) [![GitHub stars](https://img.shields.io/github/stars/yatharth1706/UserAuthorization-JWT)](https://github.com/yatharth1706/UserAuthorization-JWT/stargazers)
+
+<img src="https://jwt.io/img/pic_logo.svg">
 
 #### What is JWT?
 
